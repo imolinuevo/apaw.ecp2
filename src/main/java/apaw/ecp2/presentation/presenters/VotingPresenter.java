@@ -5,18 +5,20 @@ import apaw.ecp2.presentation.models.Model;
 public class VotingPresenter {
 
 	public String process(Model model) {
-		// TODO Auto-generated method stub
-		return null;
+		model.put("log", "VotingPresenter:process");
+		return "VotingView";
 	}
 
 	public String voteTheme(Model model) {
-		// TODO Auto-generated method stub
-		return null;
+		model.put("log", "VotingPresenter:voteTheme");
+		// TODO
+		return "VotingView";
 	}
 
 	public String showThemeManager(Model model) {
-		// TODO Auto-generated method stub
-		return null;
+		model.put("log", "VotingPresenter:showThemeManager");
+		// TODO
+		return "VotingView";
 	}
 
 }

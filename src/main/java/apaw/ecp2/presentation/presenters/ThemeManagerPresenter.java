@@ -5,18 +5,20 @@ import apaw.ecp2.presentation.models.Model;
 public class ThemeManagerPresenter {
 
 	public String process(Model model) {
-		// TODO Auto-generated method stub
-		return null;
+		model.put("log", "ThemeManager:process");
+		return "ThemeManagerView";
 	}
 
 	public String showVoting(Model model) {
-		// TODO Auto-generated method stub
-		return null;
+		model.put("log", "ThemeManager:showVoting");
+		// TODO
+		return "ThemeManagerView";
 	}
 
 	public String createTheme(Model model) {
-		// TODO Auto-generated method stub
-		return null;
+		model.put("log", "ThemeManager:createTheme");
+		// TODO
+		return "ThemeManagerView";
 	}
 
 }
