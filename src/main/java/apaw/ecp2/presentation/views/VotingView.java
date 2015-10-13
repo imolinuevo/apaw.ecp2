@@ -1,5 +1,13 @@
 package apaw.ecp2.presentation.views;
 
-public class VotingView {
+import apaw.ecp2.presentation.models.Model;
+
+public class VotingView implements View{
+
+	@Override
+	public void show(Model model) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
