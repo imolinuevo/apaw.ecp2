@@ -41,17 +41,13 @@ public class Dispatcher {
 			VotingPresenter votingPresenter = new VotingPresenter();
 			if ("voteTheme".equals(action)) {
 				nextView = votingPresenter.voteTheme(model);
-			} else if ("showThemeManager".equals(action)) {
-				nextView = votingPresenter.showThemeManager(model);
 			} else {
 				model.put("error", "Acción no permitida: " + action);
 			}
 			break;
 		case "ThemeManagerPresenter":
 			ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
-			if ("showVoting".equals(action)) {
-				nextView = themeManagerPresenter.showVoting(model);
-			} else if ("createTheme".equals(action)) {
+			if ("createTheme".equals(action)) {
 				nextView = themeManagerPresenter.createTheme(model);
 			} else {
 				model.put("error", "Acción no permitida: " + action);

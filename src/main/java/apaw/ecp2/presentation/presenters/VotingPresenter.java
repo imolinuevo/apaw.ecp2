@@ -15,10 +15,4 @@ public class VotingPresenter {
 		return "VotingView";
 	}
 
-	public String showThemeManager(Model model) {
-		model.put("log", "VotingPresenter:showThemeManager");
-		// TODO
-		return "VotingView";
-	}
-
 }

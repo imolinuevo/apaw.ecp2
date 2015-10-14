@@ -9,12 +9,6 @@ public class ThemeManagerPresenter {
 		return "ThemeManagerView";
 	}
 
-	public String showVoting(Model model) {
-		model.put("log", "ThemeManager:showVoting");
-		// TODO
-		return "ThemeManagerView";
-	}
-
 	public String createTheme(Model model) {
 		model.put("log", "ThemeManager:createTheme");
 		// TODO
