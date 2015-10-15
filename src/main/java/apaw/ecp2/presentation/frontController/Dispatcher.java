@@ -1,5 +1,6 @@
 package apaw.ecp2.presentation.frontController;
 
+import apaw.ecp2.business.views.VoteTransferObject;
 import apaw.ecp2.presentation.models.Model;
 import apaw.ecp2.presentation.presenters.ThemeManagerPresenter;
 import apaw.ecp2.presentation.presenters.VotingPresenter;
@@ -40,7 +41,7 @@ public class Dispatcher {
 		case "VotingPresenter":
 			VotingPresenter votingPresenter = new VotingPresenter();
 			if ("voteTheme".equals(action)) {
-				nextView = votingPresenter.voteTheme(model);
+				nextView = votingPresenter.voteTheme(model, new VoteTransferObject(request.getParams().get("themeName"),request.getParams().get("value")));
 			} else {
 				model.put("error", "Acción no permitida: " + action);
 			}
@@ -48,7 +49,7 @@ public class Dispatcher {
 		case "ThemeManagerPresenter":
 			ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
 			if ("createTheme".equals(action)) {
-				nextView = themeManagerPresenter.createTheme(model);
+				nextView = themeManagerPresenter.createTheme(model, request.getParams().get("themeName"));
 			} else {
 				model.put("error", "Acción no permitida: " + action);
 			}

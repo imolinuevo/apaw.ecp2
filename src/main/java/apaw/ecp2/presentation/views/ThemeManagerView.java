@@ -8,8 +8,7 @@ public class ThemeManagerView implements View {
 
 	@Override
 	public void show(Model model) {
-		System.out.println("ThemeManagerView");
-		System.out.println("   " + model.get("log"));
+		System.out.println("Theme Manager Page");
 		System.out.print("   Temas: ");
 		for (Entry<String, Object> e : model.getMap().entrySet()) {
 			System.out.print("[" + e.getKey() + "]");
