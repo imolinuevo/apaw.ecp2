@@ -41,7 +41,10 @@ public class Dispatcher {
 		case "VotingPresenter":
 			VotingPresenter votingPresenter = new VotingPresenter();
 			if ("voteTheme".equals(action)) {
-				nextView = votingPresenter.voteTheme(model, new VoteTransferObject(request.getParams().get("themeName"),request.getParams().get("value")));
+				nextView = votingPresenter
+						.voteTheme(model, new VoteTransferObject(request
+								.getParams().get("themeName"), request
+								.getParams().get("value")));
 			} else {
 				model.put("error", "Acción no permitida: " + action);
 			}
@@ -49,7 +52,8 @@ public class Dispatcher {
 		case "ThemeManagerPresenter":
 			ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
 			if ("createTheme".equals(action)) {
-				nextView = themeManagerPresenter.createTheme(model, request.getParams().get("themeName"));
+				nextView = themeManagerPresenter.createTheme(model, request
+						.getParams().get("themeName"));
 			} else {
 				model.put("error", "Acción no permitida: " + action);
 			}

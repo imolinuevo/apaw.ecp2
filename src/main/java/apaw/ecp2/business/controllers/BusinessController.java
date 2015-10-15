@@ -1,5 +1,6 @@
 package apaw.ecp2.business.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import apaw.ecp2.business.models.daos.DaoFactory;
@@ -33,4 +34,26 @@ public class BusinessController {
 		return DaoFactory.getFactory().getThemeDao().findAll();
 	}
 
+	public List<VoteTransferObject> showAverage() {
+		List<Theme> themes = DaoFactory.getFactory().getThemeDao().findAll();
+		List<Vote> votes = DaoFactory.getFactory().getVoteDao().findAll();
+		List<VoteTransferObject> transferObjects = new ArrayList<VoteTransferObject>();
+		for (Theme theme : themes) {
+			int total = 0;
+			int count = 0;
+			int result = 0;
+			for (Vote vote : votes) {
+				if (vote.getTheme().getName().equals(theme.getName())) {
+					total += vote.getVote();
+					count++;
+				}
+			}
+			if (count > 0) {
+				result = total / count;
+			}
+			transferObjects.add(new VoteTransferObject(theme.getName(), Integer
+					.toString(result)));
+		}
+		return transferObjects;
+	}
 }
