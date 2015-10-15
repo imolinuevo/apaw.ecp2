@@ -1,5 +1,7 @@
 package apaw.ecp2.business.controllers;
 
+import java.util.List;
+
 import apaw.ecp2.business.models.daos.DaoFactory;
 import apaw.ecp2.business.models.entities.Theme;
 import apaw.ecp2.business.models.entities.Vote;
@@ -25,6 +27,10 @@ public class BusinessController {
 						DaoFactory.getFactory().getThemeDao()
 								.findByName(voteTransferObject.getThemeName())));
 		idVote++;
+	}
+
+	public List<Theme> showThemes() {
+		return DaoFactory.getFactory().getThemeDao().findAll();
 	}
 
 }
